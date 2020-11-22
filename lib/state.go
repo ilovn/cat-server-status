@@ -19,6 +19,9 @@ type (
 		Disk Disk
 		Nets []Net
 		Partitions []Partition
+		CollectTimestamp int64
+		CollectTime string
+		Token string
 	}
 	Memory struct {
 		//{"total":17179869184,"available":5309943808,"used":11869925376,"usedPercent":69.09205913543701,"free":407195648,"active":5144727552,"inactive":4902748160,"wired":3687264256}
@@ -113,11 +116,16 @@ type (
 )
 
 func GetState() string {
-	return collet()
+	bs, _ := json.Marshal(collet())
+	return string(bs)
 }
 
-func collet() string {
+func collet() State {
 	state := State{}
+
+	state.CollectTime = time.Now().Format("2006-01-02 15:04:05")
+	state.CollectTimestamp = time.Now().Unix()
+
 	_mem  := Memory{}
 	_swap  := Swap{}
 	_cpus := make([]CPU, 0)
@@ -248,8 +256,7 @@ func collet() string {
 	// Partitions
 	state.Partitions = _parts
 
-	bs, _ := json.Marshal(state)
-	return string(bs)
+	return state
 
 	//fmt.Println(cpu.Percent(time.Second, true))
 	//fmt.Println(cpu.Percent(time.Second, false))

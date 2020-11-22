@@ -21,6 +21,42 @@
   version = "v1.2.4"
 
 [[projects]]
+  digest = "1:903cefda69fade8ffb9f4c16008da9f5d2bd949c69925f34b9bca5e3e639eb8c"
+  name = "github.com/golang/protobuf"
+  packages = ["proto"]
+  pruneopts = "UT"
+  revision = "4846b58453b3708320bdb524f25cc5a1d9cda4d4"
+  version = "v1.4.3"
+
+[[projects]]
+  digest = "1:6078383dbb7405bfa3ce16957f37564e3b716afa29b6eb45ffdb6674624d1e0d"
+  name = "github.com/gorilla/mux"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "98cb6bf42e086f6af920b965c38cacc07402d51b"
+  version = "v1.8.0"
+
+[[projects]]
+  branch = "master"
+  digest = "1:364b908b9b27b97ab838f2f6f1b1f46281fa29b978a037d72a9b1d4f6d940190"
+  name = "github.com/hailocab/go-hostpool"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "e80d13ce29ede4452c43dea11e79b9bc8a15b478"
+
+[[projects]]
+  digest = "1:86fbd18c1942728ab9cebc391bfe31266a27e2d2a0cf05c3bce8fc605e5f44c2"
+  name = "github.com/opentracing/opentracing-go"
+  packages = [
+    ".",
+    "ext",
+    "log",
+  ]
+  pruneopts = "UT"
+  revision = "d34af3eaa63c4d08ab54863a4bdd0daa45212e12"
+  version = "v1.2.0"
+
+[[projects]]
   digest = "1:c558d6c4ec753a6ed1046cbb5b583d0a0fc91ee4bd2f275ebd61173eaeb24360"
   name = "github.com/shirou/gopsutil"
   packages = [
@@ -37,6 +73,30 @@
   version = "v3.20.10"
 
 [[projects]]
+  digest = "1:1760ee71834b3d0c59ffb6e0f9444fb68aec64bd6630b99b349fb111f74022fa"
+  name = "github.com/sirupsen/logrus"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "6699a89a232f3db797f2e280639854bbc4b89725"
+  version = "v1.7.0"
+
+[[projects]]
+  branch = "master"
+  digest = "1:f92f6956e4059f6a3efc14924d2dd58ba90da25cc57fe07ae3779ef2f5e0c5f2"
+  name = "golang.org/x/crypto"
+  packages = ["pbkdf2"]
+  pruneopts = "UT"
+  revision = "c1f2f97bffc9c53fc40a1a28a5b460094c0050d9"
+
+[[projects]]
+  branch = "master"
+  digest = "1:76ee51c3f468493aff39dbacc401e8831fbb765104cbf613b89bef01cf4bad70"
+  name = "golang.org/x/net"
+  packages = ["context"]
+  pruneopts = "UT"
+  revision = "69a78807bb2bb6d1599c68698c6b009505012083"
+
+[[projects]]
   branch = "master"
   digest = "1:18ea469347153b8377531800cc52d0b8374c45cd9c87c25aba9595af80b7bf34"
   name = "golang.org/x/sys"
@@ -48,15 +108,73 @@
   pruneopts = "UT"
   revision = "cc9327a14d48c2941d21731354f4e1eabfd239f7"
 
+[[projects]]
+  digest = "1:cccb3a18e62abaccd19c309fc01a69da2509719f5a453cb2e66969f670503245"
+  name = "google.golang.org/protobuf"
+  packages = [
+    "encoding/prototext",
+    "encoding/protowire",
+    "internal/descfmt",
+    "internal/descopts",
+    "internal/detrand",
+    "internal/encoding/defval",
+    "internal/encoding/messageset",
+    "internal/encoding/tag",
+    "internal/encoding/text",
+    "internal/errors",
+    "internal/fieldsort",
+    "internal/filedesc",
+    "internal/filetype",
+    "internal/flags",
+    "internal/genid",
+    "internal/impl",
+    "internal/mapsort",
+    "internal/pragma",
+    "internal/set",
+    "internal/strs",
+    "internal/version",
+    "proto",
+    "reflect/protoreflect",
+    "reflect/protoregistry",
+    "runtime/protoiface",
+    "runtime/protoimpl",
+  ]
+  pruneopts = "UT"
+  revision = "3f7a61f89bb6813f89d981d1870ed68da0b3c3f1"
+  version = "v1.25.0"
+
+[[projects]]
+  digest = "1:166438587ed45ac211dab8a3ecebf4fa0c186d0db63430fb9127bbc2e5fcdc67"
+  name = "gopkg.in/cenkalti/backoff.v2"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "5267b6dd4d2666b980a911bf235efa276222cbe2"
+  version = "v2.2.1"
+
+[[projects]]
+  digest = "1:6fdb4eff5667421f715b38185c23786acc2daaffaef3f7e5a2495d4dd72cfb86"
+  name = "gopkg.in/rethinkdb/rethinkdb-go.v6"
+  packages = [
+    ".",
+    "encoding",
+    "ql2",
+    "types",
+  ]
+  pruneopts = "UT"
+  revision = "fcfe1f12e1c9fb834ac0e68e7771dbfc0e773e4f"
+  version = "v6.2.1"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
+    "github.com/gorilla/mux",
     "github.com/shirou/gopsutil/cpu",
     "github.com/shirou/gopsutil/disk",
     "github.com/shirou/gopsutil/host",
     "github.com/shirou/gopsutil/mem",
     "github.com/shirou/gopsutil/net",
+    "gopkg.in/rethinkdb/rethinkdb-go.v6",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1
